@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewClassroom()">New Classroom</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-classroom-item *ngFor="let classR of classrooms; let i = index"
+                        [classroom]="classR"
+                        [index]="i"
+    ></app-classroom-item>
+  </div>
+</div>

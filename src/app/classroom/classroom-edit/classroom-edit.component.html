@@ -1,0 +1,118 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="classroomForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!classroomForm.valid">Save
+          </button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="gradeClass">Grade Class</label>
+            <input
+              type="text"
+              id="gradeClass"
+              formControlName="gradeClass"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="teacherImagePath">Image URL</label>
+            <input
+              type="text"
+              id="teacherImagePath"
+              formControlName="teacherImagePath"
+              class="form-control"
+              #imagePath>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img [src]="imagePath.value" class="img-responsive">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="teacherName">Teacher name</label>
+            <textarea
+              type="text"
+              id="teacherName"
+              class="form-control"
+              formControlName="teacherName"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="specialization">Specialization</label>
+            <textarea
+              type="text"
+              id="specialization"
+              class="form-control"
+              formControlName="specialization"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12" formArrayName="students">
+          <div
+            class="row"
+            *ngFor="let studentCtr of classroomForm.get('students').controls; let i = index"
+            [formGroupName]="i"
+            style="margin-top: 10px;">
+            <div class="col-xs-3">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="firstname">
+            </div>
+            <div class="col-xs-3">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="lastname">
+            </div>
+            <div class="col-xs-3">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="regCode">
+            </div>
+            <div class="col-xs-2">
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="onDeleteStudent(i)">X
+              </button>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-xs-12">
+              <button
+                type="button"
+                class="btn btn-success"
+                (click)="onAddStudent()">Add Ingredient
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
