@@ -1,4 +1,4 @@
-import {Student} from '../shered/student.model';
+import {Student} from '../shared/student.model';
 import {Subject, Subscription} from 'rxjs';
 
 export class StudentService {

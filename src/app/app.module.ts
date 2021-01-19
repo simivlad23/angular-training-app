@@ -10,7 +10,7 @@ import { ClassroomDetailsComponent } from './classroom/classroom-details/classro
 import { ClassroomListComponent } from './classroom/classroom-list/classroom-list.component';
 import { ClassroomItemComponent } from './classroom/classroom-list/classroom-item/classroom-item.component';
 import { StudentEditComponent } from './student/student-edit/student-edit.component';
-import {DropdownDirective} from './shered/dropdown.directive';
+import {DropdownDirective} from './shared/dropdown.directive';
 import {StudentService} from './student/student.service';
 import {AppRoutingModule} from './app-routing.module';
 import { ClassroomEditComponent } from './classroom/classroom-edit/classroom-edit.component';

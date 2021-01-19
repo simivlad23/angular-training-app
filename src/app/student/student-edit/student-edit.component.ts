@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {Student} from '../../shered/student.model';
+import {Student} from '../../shared/student.model';
 import {StudentService} from '../student.service';
 import {NgForm} from '@angular/forms';
 import {Subscription} from 'rxjs';

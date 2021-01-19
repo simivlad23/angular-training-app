@@ -1,4 +1,4 @@
-import {Student} from '../shered/student.model';
+import {Student} from '../shared/student.model';
 
 export class Classroom {
   public gradeClass: string;
